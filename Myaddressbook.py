@@ -113,10 +113,12 @@ while True:
         newnumber = input("Enter new phone number: ")
         contacts[persontoupdate] = newnumber
         file = open('People.txt', 'w')
+        space = " "
+        personplusspace = persontoupdate + space
         for line in lines:
-            if persontoupdate not in line:
+            if personplusspace not in line:
                 file.write(line)
-            if persontoupdate in line:
+            if personplusspace in line:
                 for contact, value in contacts.items():
                     file.write(contact)
                     file.write(" - ")
